@@ -1,29 +1,22 @@
 class CharacterCount:
-    __var = ""
-
     def __init__(self):
-        __var = ""
+        self.var = ""
 
-    def __isnumber(self,val):
-        for i in val:
-            if(i <= '0' or i>= '9'):
-                return False
-        return True
-
-    def setVar(self, str):
-        if(self.__isnumber(str)):
-            print("You have enetered an integer")
+    def set_var(self, string):
+        if type(string) == int:
+            print("Invalid input.")
         else:
-            self.__var = str
+            self.var = string
 
-    def getCount(self):
-        count=0
-        for i in self.__var:
-            count=count+1
-        return count
+    def get_count(self):
+        occurence = 0
+        for i in self.var:
+            occurence = occurence + 1
+        return occurence
 
-char=CharacterCount()
 
-char.setVar(input("Enter character : "))
-count=char.getCount()
-print("Count of characer is : " , count)
+char = CharacterCount()
+
+char.set_var("123")
+count = char.get_count()
+print("Count of character is : ", count)
